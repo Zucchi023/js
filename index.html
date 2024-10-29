@@ -14,7 +14,8 @@
       top: 10;
       left: 0;
     }
-    </style>
+  </style>
+  <div>タイムリミット <input type="checkbox" id="setting" value=""/></div>
 </head>
 <body>
   <p id="timer">残り時間：</p>
@@ -42,6 +43,11 @@ function remake(){
 }
 // タイマー
 function timer(){
+  if(!document.getElementById("setting"))
+  {
+    inputInstance
+    window.alert("on!!");
+  }
 
   seconds--;
   document.getElementById("timer").innerHTML = "残り時間：" + seconds;
