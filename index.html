@@ -8,10 +8,6 @@
   <meta content="ねらえ！" name="title">
   <meta content="ディスクリプション" name="description">
   <meta content="キーワード" name="keywords">
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-  <![endif]-->
   <style>
     #target {
       position: absolute;
@@ -28,8 +24,8 @@
 let gameTime = 10;
 let seconds = gameTime;
 let count = 0;
-setInterval(timer,1000 * 1);
 
+setInterval(timer,1000 * 1);
 document.getElementById("target").addEventListener('click', add);
 
 
@@ -44,6 +40,7 @@ function remake(){
   document.getElementById("target").style.left = posX + "px";
   document.getElementById("target").style.top = posY + "px"
 }
+// タイマー
 function timer(){
 
   seconds--;
