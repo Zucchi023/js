@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=640, maximum-scale=1">
+  <title>マウスで射的ｯ！</title>
+  <meta content="ねらえ！" name="title">
+  <meta content="ディスクリプション" name="description">
+  <meta content="キーワード" name="keywords">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+  <style>
+    #target {
+      position: absolute;
+      top: 10;
+      left: 0;
+    }
+    </style>
+</head>
+<body>
+  <p id="timer">残り時間：</p>
+  <td ><img id="target" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9j0bvLnrp1BKQqMmGJI0zapgi09wI8vuZZ60N6H9a8GODwTkfwASuNVGrslxnp0E7FyQks3ORa8IJtAo12_jUB6msMvcy0Ci_ehZ1w1wknaPzXumh5YONcaWqg1xxMwdWWOTQI_fgbVEp/s800/sports_archery_mato1.png"
+    width="100" height="100"></td>
+<script>
+let gameTime = 10;
+let seconds = gameTime;
+let count = 0;
+setInterval(timer,1000 * 1);
+
+document.getElementById("target").addEventListener('click', add);
+
+
+function add(){
+  count++;
+  remake();
+
+}
+function remake(){
+  var posX = Math.random() * (window.innerWidth - document.getElementById("target").width);
+  var posY = Math.random() * (window.innerHeight - document.getElementById("target").height);
+  document.getElementById("target").style.left = posX + "px";
+  document.getElementById("target").style.top = posY + "px"
+}
+function timer(){
+
+  seconds--;
+  document.getElementById("timer").innerHTML = "残り時間：" + seconds;
+
+  if(seconds < 0){
+    result();
+
+  }
+}
+function result(){
+  window.alert(count);
+  resetGame();
+}
+function resetGame(){
+  count = 0;
+  seconds = gameTime;
+
+  document.getElementById("target").style.left = 0 + "px";
+  document.getElementById("target").style.top = 50 + "px"
+}
+</script>
+
+</body>
+</html>
