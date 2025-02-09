@@ -1,0 +1,62 @@
+body {
+    background: url(https://i.pinimg.com/1200x/5d/c5/d5/5dc5d5f6b254e629b5e2a8e7fda52d18.jpg);
+    background-size: cover;
+}
+.container {
+    font-size: 0;   /* ボタンの余白をなくす */
+}
+
+#title {
+    /* 中央揃え */
+    text-align: center;
+
+    /* 色 */
+    color: antiquewhite;
+}
+
+#board {
+    /* 上下　左右　*/
+    /* 5文字　自動　*/
+    margin: 5rem auto;
+
+    /* サイズ */
+    width: 40rem;
+    height: 40rem;
+
+    /* 色 */
+    background-color: black;
+    outline: 1.5rem solid; /* 枠1.5 実線 */
+    outline-color: black;
+}
+
+.square {
+    /* サイズ */
+    width: 5rem;
+    height: 5rem;
+
+    /* 色 */
+    background-color: green;
+    box-shadow: none !important; /* これ優先に */
+
+    /* フォントサイズ */
+    font-size: 2.5rem;
+}
+.square[data-owner="black"]
+{
+    color: black;
+}
+.square[data-owner="white"]
+{
+    color: white;
+}
+.cant-select{
+    background-color: green !important;
+}
+
+#controller {
+    /* 配置 */
+    /* 上から１、左から１文字余白　固定 */
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+}
